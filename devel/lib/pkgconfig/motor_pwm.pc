@@ -1,8 +1,0 @@
-prefix=/home/xingt/catkin_xingt/devel
-
-Name: motor_pwm
-Description: Description of motor_pwm
-Version: 0.0.0
-Cflags: -I/home/xingt/catkin_xingt/src/motor_pwm/include
-Libs: -L${prefix}/lib 
-Requires: 

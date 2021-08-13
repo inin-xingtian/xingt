@@ -1,2 +1,0 @@
-set(xingt_msgs_MESSAGE_FILES "/home/xingt/catkin_xingt/src/xingt_msgs/msg/Person.msg;/home/xingt/catkin_xingt/src/xingt_msgs/msg/benwake_tf.msg;/home/xingt/catkin_xingt/src/xingt_msgs/msg/encoder_coder.msg;/home/xingt/catkin_xingt/src/xingt_msgs/msg/laser_range.msg;/home/xingt/catkin_xingt/src/xingt_msgs/msg/gyroscope.msg;/home/xingt/catkin_xingt/src/xingt_msgs/msg/motor_angle.msg;/home/xingt/catkin_xingt/src/xingt_msgs/msg/pressure_device.msg")
-set(xingt_msgs_SERVICE_FILES "")
