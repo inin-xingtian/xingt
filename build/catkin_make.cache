@@ -1,0 +1,2 @@
+benwake_tf:ecoder_coder:motor_pwm:xingt_msgs
+-DCATKIN_DEVEL_PREFIX=/home/xingt/catkin_xingt/devel -DCMAKE_INSTALL_PREFIX=/home/xingt/catkin_xingt/install -G Unix Makefiles

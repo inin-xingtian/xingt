@@ -1,0 +1,41 @@
+<!-- <launch>
+  
+  <node pkg="ecoder_coder" type="ecoder_coder_node" name="left_leg_ecoderl">
+    <param name="serial_port" type="string" value="/dev/ttyUSB0" />
+    <param name="baud_rate" type="int" value="2500000" />
+    <param name="pubName" type="string" value="/xingt/leftleg_ecoderl" />
+    <param name="init_ecoder_data" type="double" value="217490.0" />
+    <param name="init_theta" type="double" value="134.0" />
+  </node>
+  <node pkg="ecoder_coder" type="ecoder_coder_node" name="left_leg_ecoderr">
+    <param name="serial_port" type="string" value="/dev/ttyUSB1" />
+    <param name="baud_rate" type="int" value="2500000" />
+    <param name="pubname" type="string" value="/xingt/leftleg_ecoderr" />
+    <param name="init_ecoder_data" type="double" value="11490.0" />
+    <param name="init_theta" type="double" value="137.0" />
+  </node>
+  <include file="$(find benwake_tf)/launch/benwake_tf03.launch">
+  </include>
+  <include file="$(find xsens_driver)/launch/xsens_driver.launch">
+  </include>
+  <node pkg="tf" type="static_tra
+  nsform_publisher" name="broadcastertf03" args="0 0 0 0 0 0 base_link tf03 100" />
+</launch> -->
+<launch>
+  <node pkg="ecoder_coder" type="ecoder_coder_node" name="left_leg_ecoderl">
+    <param name="serial_port" type="string" value="/dev/ttyUSB0" />
+    <param name="baud_rate" type="int" value="2500000" />
+    <param name="pubname" type="string" value="/xingt/ecoder/left_legl" />
+    <param name="init_ecoder_data" type="double" value="217490.0" />
+    <param name="init_theta" type="double" value="134.0" />
+  </node>
+  <node pkg="ecoder_coder" type="ecoder_coder_node" name="left_leg_ecoderr">
+    <param name="serial_port" type="string" value="/dev/ttyUSB0" />
+    <param name="baud_rate" type="int" value="2500000" />
+    <param name="pubname" type="string" value="/xingt/ecoder/left_legr" />
+    <param name="init_ecoder_data" type="double" value="11490.0" />
+    <param name="init_theta" type="double" value="137.0" />
+  </node>
+  <!-- <node pkg="tf" type="static_tra
+  nsform_publisher" name="broadcastertf03" args="0 0 0 0 0 0 base_link tf03 100" /> -->
+</launch>

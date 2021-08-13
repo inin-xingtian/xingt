@@ -1,0 +1,10 @@
+<launch>
+  <node pkg="benwake_tf" type="benwake_tf_node" name="benwake_tf_node">
+    <param name="serial_port" type="string" value="/dev/ttyUSB0" />
+    <param name="baud_rate" type="int" value="115200" />
+    <param name="pubname" type="string" value="/xingt/benwake_tf" />
+  </node>
+  
+  <!-- <node pkg="tf" type="static_tra
+  nsform_publisher" name="broadcastertf03" args="0 0 0 0 0 0 base_link tf03 100" /> -->
+</launch>
