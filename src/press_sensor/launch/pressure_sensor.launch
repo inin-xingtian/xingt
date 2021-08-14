@@ -1,0 +1,13 @@
+<launch>
+  <node pkg="press_sensor" type="press_talker" name="press_left">
+    <param name="connect_site" type="string" value="192.168.0.230" />
+    <param name="pubname" type="string" value="/xingt/pressure/left" />
+  </node>
+  <node pkg="press_sensor" type="press_talker" name="press_right">
+    <param name="connect_site" type="string" value="192.168.0.55" />
+    <param name="pubname" type="string" value="/xingt/pressure/right" />
+  </node>
+  
+  <!-- <node pkg="tf" type="static_tra
+  nsform_publisher" name="broadcastertf03" args="0 0 0 0 0 0 base_link tf03 100" /> -->
+</launch>

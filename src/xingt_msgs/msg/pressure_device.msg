@@ -1,3 +1,2 @@
 Header header
-
-float64[]  pressure
+float64  data
