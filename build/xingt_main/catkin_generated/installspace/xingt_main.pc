@@ -1,0 +1,8 @@
+prefix=/home/triplez/catkin_xingt/install
+
+Name: xingt_main
+Description: Description of xingt_main
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp xingt_msgs geometry_msgs

@@ -1,0 +1,2 @@
+set(xingt_msgs_MESSAGE_FILES "/home/triplez/catkin_xingt/src/xingt_msgs/msg/xingt_can.msg;/home/triplez/catkin_xingt/src/xingt_msgs/msg/benwake_tf.msg;/home/triplez/catkin_xingt/src/xingt_msgs/msg/encoder_coder.msg;/home/triplez/catkin_xingt/src/xingt_msgs/msg/laser_range.msg;/home/triplez/catkin_xingt/src/xingt_msgs/msg/xsens_imu.msg;/home/triplez/catkin_xingt/src/xingt_msgs/msg/motor_angle.msg;/home/triplez/catkin_xingt/src/xingt_msgs/msg/pressure_device.msg")
+set(xingt_msgs_SERVICE_FILES "")

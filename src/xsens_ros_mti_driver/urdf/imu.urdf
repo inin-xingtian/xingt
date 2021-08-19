@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot name="imu">
+  <link name="imu_link">
+    <visual>
+      <origin rpy="1.58 0 3.14" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://xsens_mti_driver/urdf/imu.STL" scale="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="xsens_orange">
+        <color rgba="0.92 0.45 0.02 1.0"/>
+      </material>
+    </visual>
+  </link>
+</robot>

@@ -1,0 +1,8 @@
+prefix=/home/triplez/catkin_xingt/install
+
+Name: press_sensor
+Description: Description of press_sensor
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lpress_sensor
+Requires: roscpp xingt_msgs

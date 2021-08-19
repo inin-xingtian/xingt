@@ -1,0 +1,68 @@
+<launch>
+
+    <arg name="left_init_theta_l" default="134.0"/>
+    <arg name="left_init_theta_r" default="137.0"/>
+    <arg name="right_init_theta_l" default="134.0"/>
+    <arg name="right_init_theta_r" default="134.0"/>
+
+
+    <!-- 四个编码器 -->
+  <node pkg="ecoder_coder" type="ecoder_coder_node" name="left_leg_ecoderl" output="screen">
+    <param name="serial_port" type="string" value="/dev/ttyUSB1" />
+    <param name="baud_rate" type="int" value="2500000" />
+    <param name="pubname" type="string" value="/xingt/ecoder/left_legl" />
+    <param name="init_ecoder_data" type="double" value="217490.0" />
+    <param name="init_theta" type="double" value="$(arg left_init_theta_l)"/>
+  </node>
+
+
+  <node pkg="ecoder_coder" type="ecoder_coder_node" name="left_leg_ecoderr" output="screen">
+    <param name="serial_port" type="string" value="/dev/ttyUSB0" />
+    <param name="baud_rate" type="int" value="2500000" />
+    <param name="pubname" type="string" value="/xingt/ecoder/left_legr" />
+    <param name="init_ecoder_data" type="double" value="11490.0" />
+    <param name="init_theta" type="double" value="$(arg left_init_theta_r)"/>
+  </node>
+  <!-- <node pkg="ecoder_coder" type="ecoder_coder_node" name="left_leg_ecoderr">
+    <param name="serial_port" type="string" value="/dev/ttyUSB0" />
+    <param name="baud_rate" type="int" value="2500000" />
+    <param name="pubname" type="string" value="/xingt/ecoder/left_legr" />
+    <param name="init_ecoder_data" type="double" value="11490.0" />
+    <param name="init_theta" type="double" value="$(arg right_init_theta_l)"/ />
+  </node>
+  <node pkg="ecoder_coder" type="ecoder_coder_node" name="left_leg_ecoderr">
+    <param name="serial_port" type="string" value="/dev/ttyUSB0" />
+    <param name="baud_rate" type="int" value="2500000" />
+    <param name="pubname" type="string" value="/xingt/ecoder/left_legr" />
+    <param name="init_ecoder_data" type="double" value="11490.0" />
+    <param name="init_theta" type="double" value="$(arg right_init_theta_r)" />
+  </node> -->
+  <!-- <node pkg="tf" type="static_tra
+  nsform_publisher" name="broadcastertf03" args="0 0 0 0 0 0 base_link tf03 100" /> -->
+
+  <!-- 陀螺仪 -->
+  <include file="$(find xsens_mti_driver)/launch/xsens_mti_node.launch">
+  </include>
+
+
+  <!-- 压力传感器 -->
+  <include file="$(find press_sensor)/launch/pressure_sensor.launch">
+  </include>
+
+
+  <!-- 激光 -->
+   <include file="$(find benwake_tf)/launch/benwake_tf03.launch">
+  </include>
+
+
+  <!-- 主函数 -->
+  <node pkg="xingt_main" type="xingt_main_node" name="xingt_main_node" output="screen">
+    <param name="left_init_theta_l" type="double" value="$(arg left_init_theta_l)" />
+    <param name="left_init_theta_r" type="double" value="$(arg left_init_theta_r)" />
+    <param name="right_init_theta_l" type="double" value="$(arg right_init_theta_l)" />
+    <param name="right_init_theta_r" type="double" value="$(arg right_init_theta_r)" />
+    <!-- <param name="init_theta" type="double" value="$(arg right_init_theta_r)" /> -->
+  </node> 
+
+
+</launch>

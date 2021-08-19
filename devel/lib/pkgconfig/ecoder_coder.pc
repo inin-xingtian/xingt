@@ -1,0 +1,8 @@
+prefix=/home/triplez/catkin_xingt/devel
+
+Name: ecoder_coder
+Description: Description of ecoder_coder
+Version: 0.0.0
+Cflags: -I/home/triplez/catkin_xingt/src/ecoder_coder/include
+Libs: -L${prefix}/lib -leCoder_coder
+Requires: 

@@ -1,7 +1,8 @@
 #include <ecoder_coder.h>
 int main(int argc, char** argv)
 {
-	ros::init(argc, argv, "ecoder_coder_node");		//ROS串口节点名称
+	uint8_t command[1]={0x02};
+    ros::init(argc, argv, "ecoder_coder_node");		//ROS串口节点名称
     ros::NodeHandle nh("~");
     std::string portName;
     std::string pubname;
@@ -10,8 +11,8 @@ int main(int argc, char** argv)
     nh.param("serial_port", portName, std::string("/dev/ttyUSB0"));
     nh.param("baud_rate", baud_rate, 2500000);
     nh.param("pubname", pubname, std::string("benwake_tf"));
-    nh.param("init_ecoder_data", xingt_ecoder::init_ecoder_data);
-    nh.param("init_theta", xingt_ecoder::init_theta);
+    nh.param("init_ecoder_data", xingt_ecoder::init_ecoder_data,217490.0);
+    nh.param("init_theta", xingt_ecoder::init_theta,134.0);
 
     // ROS_INFO(portName);
     ros::Publisher pub_range = nh.advertise<xingt_msgs::encoder_coder>(pubname, 1000);
@@ -21,7 +22,7 @@ int main(int argc, char** argv)
     // std::cout << "aaa"<< xingt_ecoder::zero_ecoder << " l     ";
     // std::cout << " "<< ecoder::zero_ecoder_right << "r        ";
 
-
+    // pub_range.init_theta = xingt_ecoder::init_theta;
     //  创建一个serial类
     serial::Serial sp;
     //创建timeout
@@ -53,13 +54,12 @@ int main(int argc, char** argv)
     {
         return -1;
     }
-	sp.write(xingt_ecoder::command,1);
+	sp.write(command,1);
 	// 指定循环的速率
 	ros::Rate loop_rate(10);
     while(ros::ok())
     {
-        
-        // ros::Duration(0.1).sleep();
+        ros::Duration(0.1).sleep();
         //获取缓冲区内的字节数
         size_t n = sp.available();
         if(n!=0)
@@ -81,7 +81,7 @@ int main(int argc, char** argv)
                 std::cout << std::hex << (buffer[i] & 0xff) << " ";
             }
             std::cout << std::endl;
-            sp.write(xingt_ecoder::command,1);
+            sp.write(command,1);
             //把数据发送回去
             // sp.write(buffer, n);
         }

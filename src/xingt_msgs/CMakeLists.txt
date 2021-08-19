@@ -6,15 +6,17 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   message_generation
+  geometry_msgs
+  sensor_msgs
 )
 
 add_message_files(
   FILES
-  Person.msg
+  xingt_can.msg
   benwake_tf.msg
   encoder_coder.msg  
   laser_range.msg 
-  gyroscope.msg      
+  xsens_imu.msg      
   motor_angle.msg 
   pressure_device.msg
 )
@@ -22,6 +24,8 @@ add_message_files(
 generate_messages(
   DEPENDENCIES
   std_msgs
+  geometry_msgs
+  sensor_msgs
 )
 
 catkin_package(

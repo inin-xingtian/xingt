@@ -22,14 +22,14 @@
   nsform_publisher" name="broadcastertf03" args="0 0 0 0 0 0 base_link tf03 100" />
 </launch> -->
 <launch>
-  <node pkg="ecoder_coder" type="ecoder_coder_node" name="left_leg_ecoderl">
-    <param name="serial_port" type="string" value="/dev/ttyUSB0" />
+  <node pkg="ecoder_coder" type="ecoder_coder_node" name="left_leg_ecoderl" output="screen">
+    <param name="serial_port" type="string" value="/dev/ttyUSB1" />
     <param name="baud_rate" type="int" value="2500000" />
     <param name="pubname" type="string" value="/xingt/ecoder/left_legl" />
     <param name="init_ecoder_data" type="double" value="217490.0" />
     <param name="init_theta" type="double" value="134.0" />
   </node>
-  <node pkg="ecoder_coder" type="ecoder_coder_node" name="left_leg_ecoderr">
+  <node pkg="ecoder_coder" type="ecoder_coder_node" name="left_leg_ecoderr" output="screen">
     <param name="serial_port" type="string" value="/dev/ttyUSB0" />
     <param name="baud_rate" type="int" value="2500000" />
     <param name="pubname" type="string" value="/xingt/ecoder/left_legr" />
